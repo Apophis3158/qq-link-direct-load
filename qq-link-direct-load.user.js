@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         QQ链接跳转
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  干掉从QQ打开链接时提示“当前网页非官方页面”与“已停止访问该网页”
 // @author       Apophis3158
 // @match        *://c.pc.qq.com/ios.html?*
@@ -18,5 +18,6 @@
     var src = window.location.href;
     var url = src.match(/(?<=(url=)).*?(?=&)/g);
     var dst = decodeURIComponent(url);
+
     window.location.replace(dst);
 })();
